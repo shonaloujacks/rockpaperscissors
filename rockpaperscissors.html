@@ -43,10 +43,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0; 
 
-    function playRound() {
-
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
+    function playRound(humanChoice, computerChoice) {
 
         humanChoice.toLowerCase();
 
@@ -68,14 +65,16 @@ function playGame() {
     }
 
     for (let i = 0; i < 5; i++) {
-        playRound();
-
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
     }
+    // Remember, computer declares functions and reads loops first. 
+    // So when dealing with a function that requires parameters, you need to define these parameters before function is called.
 
 }
 
-
-        playGame()
+         playGame()
 
 
     </script>
