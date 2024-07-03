@@ -1,83 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div id="score"></div>
+    <button id="btn1">Rock</button>
+    <button id="btn2">Paper</button>
+    <button id="btn3">Scissors</button>
+
+    <div id="container"></div>
+    <div id="container2"></div>
 
     <script>
-        
+      function getComputerChoice() {
+        const randomIndex = Math.floor(Math.random() * 3);
 
-function getComputerChoice() {
-    const randomIndex = Math.floor(Math.random() * 3);
-    
-    if (randomIndex === 0) {
-        return 'rock'; 
-    } else if (randomIndex === 1) {
-        return 'paper'; 
-    } else {
-        return 'scissors';
-    }
-} 
-
-
-function getHumanChoice() {
-    const HumanPrompt = prompt('Enter rock, paper or scissors'); 
-
-    if (HumanPrompt === 'rock') {
-        return 'rock'; 
-    } else if (HumanPrompt === 'paper') {
-        return 'paper';
-    } else {
-        return 'scissors';
-    }
-}
-
-
-
-function playGame() {
-
-    let humanScore = 0;
-    let computerScore = 0; 
-
-    function playRound(humanChoice, computerChoice) {
-
-        humanChoice.toLowerCase();
-
-        if ((humanChoice === 'scissors' && computerChoice === 'paper') || 
-            (humanChoice === 'paper' && computerChoice === 'rock') || 
-            (humanChoice === 'rock' && computerChoice === 'scissors')) {
-            humanScore++; 
-            console.log(`You win! ${humanChoice} beat ${computerChoice}!`);
+        if (randomIndex === 0) {
+          return "rock";
+        } else if (randomIndex === 1) {
+          return "paper";
+        } else {
+          return "scissors";
         }
+      }
 
-        else if (humanChoice === computerChoice) {
-            console.log(`${humanChoice} draws to ${computerChoice}`);
-        }
+      const container = document.querySelector("#container");
+      const content = document.createElement("div");
+      content.classList.add("content");
 
-        else {
-            console.log(`You lose! ${computerChoice} beat ${humanChoice}!`);
+      function playGame() {
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playRound(humanChoice, computerChoice) {
+          if (
+            (humanChoice === "scissors" && computerChoice === "paper") ||
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "rock" && computerChoice === "scissors")
+          ) {
+            humanScore++;
+            content.textContent = `You win! ${humanChoice} beat ${computerChoice}!`;
+            container.appendChild(content);
+          } else if (humanChoice === computerChoice) {
+            content.textContent = `${humanChoice} draws to ${computerChoice}`;
+            container.appendChild(content);
+          } else {
+            content.textContent = `You lose! ${computerChoice} beat ${humanChoice}!`;
+            container.appendChild(content);
             computerScore++;
-        }    
-    }
+          }
 
-    for (let i = 0; i < 5; i++) {
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
-    // Remember, computer declares functions and reads loops first. 
-    // So when dealing with a function that requires parameters, you need to define these parameters before function is called.
+          document.getElementById("score").innerHTML =
+            "Your score: " + humanScore + " Computer score: " + computerScore;
 
-}
+          if (humanScore === 5) {
+            content.textContent = "Game over! You win!";
+            content.setAttribute(
+              "style",
+              "background-color: green; color: white"
+            );
+            container.appendChild(content);
+            btn1.remove();
+            btn2.remove();
+            btn3.remove();
+          } else if (computerScore === 5) {
+            content.textContent = "Game over! Computer wins!";
+            content.setAttribute(
+              "style",
+              "background-color: red; color: white"
+            );
+            container.appendChild(content);
+            btn1.remove();
+            btn2.remove();
+            btn3.remove();
+          }
+        }
 
-         playGame()
+        const btn1 = document.querySelector("#btn1");
+        btn1.addEventListener("click", () => {
+          playRound("rock", getComputerChoice());
+        });
 
+        const btn2 = document.querySelector("#btn2");
+        btn2.addEventListener("click", () => {
+          playRound("paper", getComputerChoice());
+        });
 
+        const btn3 = document.querySelector("#btn3");
+        btn3.addEventListener("click", () => {
+          playRound("scissors", getComputerChoice());
+        });
+      }
+
+      // Remember, computer declares functions and reads loops first.
+      // So when dealing with a function that requires parameters, you need to define these parameters before function is called.
+
+      playGame();
     </script>
-    
-</body>
+  </body>
 </html>
