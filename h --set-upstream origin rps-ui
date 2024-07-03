@@ -1,0 +1,47 @@
+[33mcommit 30e61cc3a33479dcd60ab5458bee007c75417971[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Wed Jul 3 14:08:21 2024 +0100
+
+    Added event listeners and DOM methods
+
+[33mcommit 8bf9e2c9a4c6f19b09a6205d2e37e3e2f6851257[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Thu Jun 6 11:05:09 2024 +0100
+
+    Add guidance comments
+
+[33mcommit 707af98883ef66917578784df63461fd4618d303[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Thu Jun 6 10:40:16 2024 +0100
+
+    Executes for loop to play 5 times
+
+[33mcommit 7bbbeb75d7cbc608ffe3ab6d873e2fe7d113a14d[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Thu Jun 6 10:02:52 2024 +0100
+
+    Add playRound and playGame functions
+
+[33mcommit 4ca1f872851376e913d2e830abb2575a93b32aa2[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Wed Jun 5 17:03:30 2024 +0100
+
+    Add getHumanChoice function
+
+[33mcommit 203e1b8a9841fbb9d6096e292b1b7170af584d88[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Wed Jun 5 16:22:32 2024 +0100
+
+    Add getComputerChoice function
+
+[33mcommit 5cb0610023a96e38b71766c11c646e0f3bee930e[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Wed Jun 5 15:15:39 2024 +0100
+
+    Add rockpaperscissors.html
+
+[33mcommit b4e4275032bf0c7d9f7873eb02a97b3e13d6a2e0[m
+Author: shonaloujacks <98349286+shonaloujacks@users.noreply.github.com>
+Date:   Wed Jun 5 15:09:29 2024 +0100
+
+    Initial commit
